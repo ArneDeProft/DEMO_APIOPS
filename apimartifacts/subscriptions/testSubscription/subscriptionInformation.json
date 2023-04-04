@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "API Demo Conference API3 subscription",
+    "allowTracing": false,
+    "ownerId": "/subscriptions/9263d370-6a91-47fb-b19c-48f64bc31516/resourceGroups/ApiOps/providers/Microsoft.ApiManagement/service/dev-apim-arnedeproft/users/test-test-be",
+    "scope": "/apis/demo-conference-api",
+    "state": "active"
+  }
+}
