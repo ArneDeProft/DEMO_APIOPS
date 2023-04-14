@@ -1,0 +1,31 @@
+<!--
+    IMPORTANT:
+    - Policy fragment are included as-is whenever they are referenced.
+    - If using variables. Ensure they are setup before use.
+    - Copy and paste your code here or simply start coding
+-->
+<fragment>
+	<choose>
+		<when condition="@(context.Request.Headers.GetValueOrDefault("referer") != null)">
+			<set-variable name="referer" value="@{
+                            string [] referer; 
+                            context.Request.Headers.TryGetValue("referer", out referer);
+                            return referer[0];
+                        }" />
+			<set-variable name="isRefererValid" value="@{
+           var pattern = @"^((([!#$%&'*+\-/=?^_`{|}~\w])|((?!.*\.\.)[!#$%&'*+\-/=?^_`{|}~\w][!#$%&'*+\-/=?^_`{|}~\.\w]{0,}[!#$%&'*+\-/=?^_`{|}~\w]))[@]\w+([-.]\w+)*\.\w+([-.]\w+)*)$";
+            string [] referer; 
+            context.Request.Headers.TryGetValue("referer", out referer);
+            var regex = new Regex(pattern);
+            if(regex.Match(referer[0]).Success)
+            {
+                return true;
+            }
+            return false;
+        }" />
+		</when>
+		<otherwise>
+			<!-- one or more policy statements to be applied if none of the above conditions are true  -->
+		</otherwise>
+	</choose>
+</fragment>
