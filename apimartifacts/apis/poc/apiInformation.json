@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "",
+    "displayName": "POC",
+    "isCurrent": true,
+    "path": "tomtom",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://apimtests.kostapetan.com",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

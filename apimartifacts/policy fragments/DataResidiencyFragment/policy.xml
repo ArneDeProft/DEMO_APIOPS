@@ -1,0 +1,22 @@
+<!--
+    IMPORTANT:
+    - Policy fragment are included as-is whenever they are referenced.
+    - If using variables. Ensure they are setup before use.
+    - Copy and paste your code here or simply start coding
+-->
+<fragment>
+	<choose>
+		<when condition="@("eu".StartsWith("hostVar", StringComparison.OrdinalIgnoreCase))">
+			<set-backend-service base-url="http://eu{{base-url}}/" />
+			<set-variable name="sendto" value="send to: http://eu{{base-url}}/" />
+		</when>
+		<when condition="@("us".StartsWith("hostVar", StringComparison.OrdinalIgnoreCase))">
+			<set-backend-service base-url="http://us{{base-url}}/" />
+			<set-variable name="sendto" value="send to: http://us{{base-url}}/" />
+		</when>
+		<otherwise>
+			<set-backend-service base-url="http://{{base-url}}/" />
+			<set-variable name="sendto" value="send to: http://{{base-url}}/" />
+		</otherwise>
+	</choose>
+</fragment>

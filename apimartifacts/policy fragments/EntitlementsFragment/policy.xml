@@ -1,0 +1,13 @@
+<!--
+    IMPORTANT:
+    - Policy fragment are included as-is whenever they are referenced.
+    - If using variables. Ensure they are setup before use.
+    - Copy and paste your code here or simply start coding
+-->
+<fragment>
+	<cache-store-value key="user:10" value="abcd" duration="50000" caching-type="external" />
+	<cache-lookup-value key="user:10" variable-name="entitlement" default-value="no hit" caching-type="external" />
+	<set-header name="entitlementHeader" exists-action="skip">
+		<value>@((string)context.Variables["entitlement"])</value>
+	</set-header>
+</fragment>

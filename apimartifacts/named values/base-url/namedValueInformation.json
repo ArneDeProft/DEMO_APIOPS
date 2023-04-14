@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "base-url",
+    "secret": false,
+    "tags": [],
+    "value": "apimtests.kostapetan.com"
+  }
+}
